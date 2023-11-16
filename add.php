@@ -56,7 +56,7 @@ if (!$sql) {
     <div class = "text-center mt-24 border border-black rounded bg-gray-200 w-fit m-auto p-8">
         <h1 class = "text-xl font-bold">Enter your information</h1>
 
-        <form action = "add.php" method = "post">
+        <form action = "add.php" method = "post" id = "addForm" onsubmit = "return validateRegex();">
             <label for = "name">First Name:</label>
             <input class = "border border-black mt-2" type = "text" id = "name" name = "name" required>
             <br>
@@ -85,10 +85,11 @@ if (!$sql) {
             <input class = "border border-black mt-2" type = "text" id = "status" name = "status" required>
             <br>
 
-            <button type = "submit" value = "Submit" class="bg-green-500 hover:bg-green-700 text-white py-2 px-4 border border-green-700 rounded-full transition-all mt-4 px-8" id = "personalBtn">
+            <button type = "submit" value = "Submit" class="bg-green-500 hover:bg-green-700 text-white py-2 px-4 border border-green-700 rounded-full transition-all mt-4 px-8" id = "personalBtn"">
                 Add
             </button>
         </form>
     </div>
+    <script src="./script.js"></script>
 </body>
 </html>

@@ -56,8 +56,8 @@ if (!$sql) {
             <th class="p-4 border-black border bg-gray-300">E-Mail</th>
             <th class="p-4 border-black border bg-gray-300">Phone Number</th>
             <th class="p-4 border-black border bg-gray-300">Role</th>
-            <th class="p-4 border-black border bg-gray-300">Team</th>
             <th class="p-4 border-black border bg-gray-300">Status</th>
+            <th class="p-4 border-black border bg-gray-300">Team</th>
             <th class="p-4 border-black border bg-gray-300">Name</th>
             <th class="p-4 border-black border bg-gray-300">Date Creation</th>
         </tr>';
@@ -73,8 +73,8 @@ if (!$sql) {
             <td class='border border-black p-2'>{$row['email']}</td>
             <td class='border border-black p-2'>{$row['phone']}</td>
             <td class='border border-black p-2'>{$row['role']}</td>
-            <td class='border border-black p-2'>{$row['team']}</td>
             <td class='border border-black p-2'>{$row['status']}</td>
+            <td class='border border-black p-2'>{$row['team']}</td>
             <td class='border border-black p-2'>{$row['team_name']}</td>
             <td class='border border-black p-2'>{$row['dateCreation']}</td>";
             echo '</tr>';
