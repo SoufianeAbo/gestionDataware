@@ -155,6 +155,24 @@ if (!$sql) {
         </div>
     </div>
 
+    <div class = "border border-black w-fit m-auto p-8 mt-8 bg-slate-200 rounded-full">
+        <h2 class = "text-xl font-bold">Select an option</h2>
+
+        <div class = "flex space-around justify-center mt-4 gap-8">
+            <button class="bg-green-500 hover:bg-green-700 text-white py-2 px-4 border border-green-700 rounded transition-all" id = "personalBtn">
+                Add
+            </button>
+
+            <button class="bg-orange-500 hover:bg-orange-700 text-white py-2 px-4 border border-orange-700 rounded transition-all" id = "teamsBtn">
+                Modify
+            </button>
+
+            <button class="bg-red-500 hover:bg-red-700 text-white py-2 px-4 border border-red-700 rounded transition-all" id = "joinedBtn">
+                Remove
+            </button>
+        </div>
+    </div>
+
     <script src="./script.js"></script>
 </body>
 </html>
