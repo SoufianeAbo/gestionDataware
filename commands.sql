@@ -25,12 +25,38 @@ CREATE TABLE IF NOT EXISTS employee(
                                 status varchar(50)
                                 );
 
+-- show the tables
 SELECT * FROM teams;
 SELECT * FROM employee;
 
+-- this allows adding data to the employee table by using INSERT INTO VALUES()
+-- id isn't here because it automatically increments
 INSERT INTO employee(name, lastName, email, phone, role, team, status)
 VALUES("Zouheir", "Rhoumri", "zouheirrhoumri@gmail.com", "+212 61 129 9210", "Directeur des opérations", 1, "Congé");
 
-SELECT employee.id, employee.name, employee.lastName, employee.email, employee.phone, employee.role, employee.team, employee.status, teams.name, teams.dateCreation
+-- this allows adding data to the teams table
+INSERT INTO teams(name, dateCreation)
+VALUES("NightCrawler", "2023-09-20");
+
+-- this is the joining between employees and teams
+-- also adding alias to employee and teams because they have the same name
+SELECT employee.id, employee.name AS employee_name, employee.lastName, employee.email, employee.phone, employee.role, employee.team, employee.status, teams.name AS teams_name, teams.dateCreation
 FROM employee
 INNER JOIN teams ON employee.team=teams.id;
+
+-- this is the command that allows you to update a specific ID
+UPDATE employee SET 
+                    name = 'Soufiane',
+                    lastName = 'Abounasr',
+                    email = 'abounasrsoufiane@gmail.com',
+                    phone = '+212 62 202 4002',
+                    role = 'Directeur',
+                    team = 3,
+                    status = 'Active' 
+                WHERE (id = 2);
+
+-- this is the command that allows you to delete a specific member with an ID
+DELETE FROM employee WHERE (id = 3);
+
+-- this is the command that allows you to remove a table entirely
+DROP TABLE employee;
