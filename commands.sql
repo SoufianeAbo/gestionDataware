@@ -57,3 +57,6 @@ UPDATE employee SET
 
 -- this is the command that allows you to delete a specific member with an ID
 DELETE FROM employee WHERE (id = 3);
+
+-- this is the command that allows you to remove a table entirely
+DROP TABLE employee;
