@@ -78,14 +78,14 @@ function validateRegex(team, phone, firstName, lastNameA, email, status) {
 }
 
 function validateID() {
-    const team = document.getElementById("teamid").value;
+    // const team = document.getElementById("teamid").value;
 
-    if (team > maxTeam || team <= 0) {
-        alert("Invalid team ID! This team ID doesn't exist!");
-        return false;
-    } else {
+    // if (team > maxTeam || team <= 0) {
+    //     alert("Invalid team ID! This team ID doesn't exist!");
+    //     return false;
+    // } else {
 
-    }
+    // }
 
     if (!validateRegex("team", "phone", "firstName", "lastName", "email", "status")) {
         return false;
