@@ -43,3 +43,17 @@ VALUES("NightCrawler", "2023-09-20");
 SELECT employee.id, employee.name AS employee_name, employee.lastName, employee.email, employee.phone, employee.role, employee.team, employee.status, teams.name AS teams_name, teams.dateCreation
 FROM employee
 INNER JOIN teams ON employee.team=teams.id;
+
+-- this is the command that allows you to update a specific ID
+UPDATE employee SET 
+                    name = 'Soufiane',
+                    lastName = 'Abounasr',
+                    email = 'abounasrsoufiane@gmail.com',
+                    phone = '+212 62 202 4002',
+                    role = 'Directeur',
+                    team = 3,
+                    status = 'Active' 
+                WHERE (id = 2);
+
+-- this is the command that allows you to delete a specific member with an ID
+DELETE FROM employee WHERE (id = 3);
