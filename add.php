@@ -56,7 +56,7 @@ if (!$sql) {
     <div class = "text-center mt-24 border border-black rounded bg-gray-200 w-fit m-auto p-8">
         <h1 class = "text-xl font-bold">Enter your information</h1>
 
-        <form action = "add.php" method = "post" id = "addForm" onsubmit = "return validateRegex();">
+        <form action = "add.php" method = "post" id = "addForm" onsubmit = "return validateRegex('team', 'phone', 'name', 'lastName', 'email', 'status');">
             <label for = "name">First Name:</label>
             <input class = "border border-black mt-2" type = "text" id = "name" name = "name" required>
             <br>

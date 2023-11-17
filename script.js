@@ -6,6 +6,11 @@ const teamsTable = document.getElementById("teamsTable");
 const personalTable = document.getElementById("employeesTable");
 const joinedTable = document.getElementById("joinedTable");
 
+const idInput = document.getElementById("idInput");
+const modifyForm = document.getElementById("formInput");
+
+const maxTeam = 9;
+
 personalBtn.addEventListener("click", () => {
     teamsTable.classList.add("hidden");
     personalTable.classList.remove("hidden");
@@ -24,22 +29,20 @@ joinedBtn.addEventListener("click", () => {
     joinedTable.classList.remove("hidden");
 });
 
-function validateRegex() {
-    const teamID = document.getElementById("team").value;
+function validateRegex(team, phone, firstName, lastNameA, email, status) {
+    const teamID = document.getElementById(team).value;
 
-    const maxTeam = 9;
-
-    const phoneNum = document.getElementById("phone").value;
+    const phoneNum = document.getElementById(phone).value;
     const phoneRegex = /\+212(\s+([0-9]+\s+)+)[0-9]+/i;
 
-    const name = document.getElementById("name").value;
-    const lastName = document.getElementById("lastName").value;
+    const name = document.getElementById(firstName).value;
+    const lastName = document.getElementById(lastNameA).value;
     const nameRegex = /[A-Za-z]+/i;
 
-    const email = document.getElementById("email").value;
+    const emailID = document.getElementById(email).value;
     const emailRegex = /[A-Za-z0-9]+@[A-Za-z]+\.[A-Za-z]+/i;
 
-    const status = document.getElementById("status").value;
+    const statusID = document.getElementById(status).value;
 
     if (!phoneRegex.test(phoneNum)) {
         alert("Invalid phone number!");
@@ -61,15 +64,35 @@ function validateRegex() {
         return false;
     }
 
-    if (!emailRegex.test(email)) {
+    if (!emailRegex.test(emailID)) {
         alert("Invalid e-mail!");
         return false;
     }
 
-    if (status !== "Active" && status !== "Congé") {
+    if (statusID !== "Active" && statusID !== "Congé") {
         alert("Invalid status!");
         return false;
     }
 
     return true;
 }
+
+function validateID() {
+    const team = document.getElementById("teamid").value;
+
+    if (team > maxTeam || team <= 0) {
+        alert("Invalid team ID! This team ID doesn't exist!");
+        return false;
+    } else {
+
+    }
+
+    if (!validateRegex("team", "phone", "firstName", "lastName", "email", "status")) {
+        return false;
+    }
+    return true;
+}
+
+modifyForm.addEventListener("submit", function(event) {
+    event.preventDefault();
+});
